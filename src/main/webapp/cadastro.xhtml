@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>cadastro</title>
+</h:head>
+<h:body>
+	<h:form>
+	<h:panelGrid>
+		<table>
+			<tr>
+				<td>Id</td>
+				<td><h:inputText id="id" value="#{produtoMB.produto.id}"
+					requiredMessage="teste"	validatorMessage="por favor preencha o id">
+						<f:validateRequired />
+						<f:convertNumber type="number" />
+					</h:inputText></td>
+			</tr>
+			<tr>
+				<td>Nome</td>
+				<td><h:inputText id="nome" value="#{produtoMB.produto.name}"
+						validatorMessage="por favor preencha o nome">
+						<f:validateRequired />
+					</h:inputText></td>
+			</tr>
+			<tr>
+				<td>Valor</td>
+				<td><h:inputText id="valor" value="#{produtoMB.produto.value}"
+						 validatorMessage="por favor preencha o valor">
+						<f:validateRequired />
+						<f:convertNumber type="number" />
+					</h:inputText></td>
+			</tr>
+			<tr>
+				<td>Descrição do produto</td>
+				<td><h:inputTextarea id="descricao"
+						value="#{produtoMB.produto.description}" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: right;"><h:commandButton
+						action="#{produtoMB.salvar()}" value="Salvar" /></td>
+			</tr>
+			<h:message for="id"  style = "color:red;margin:8px;" />
+			<h:message for="nome"  style = "color:red;margin:8px;"/>
+			<h:message for="valor"  style = "color:red;margin:8px;" />
+			
+		</table>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
